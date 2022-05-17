@@ -112,23 +112,35 @@ def animacao_enforcamento(numero_erros):
     print('\n|==========|\n'
           '|          +  ')
     if numero_erros == 1:
-        print('|        (```)')
+        print('|        (```)\n'
+              '|             \n'
+              '|             \n'
+              '|             \n'
+              '|               ')
     if numero_erros == 2:
         print('|        (```)\n'
-              '|          |    ')
+              '|          |  \n'
+              '|             \n'
+              '|             \n'
+              '|               ')
     if numero_erros == 3:
         print('|        (```)\n'
               '|          |  \n'
-              '|         /     ')
+              '|         /   \n'
+              '|             \n'
+              '|               ')
     if numero_erros == 4:
         print('|        (```)\n'
               '|          |  \n'
-              '|         / \\  ')
+              '|         / \\\n'
+              '|             \n'
+              '|               ')
     if numero_erros == 5:
         print('|        (```)\n'
               '|          |  \n'
               '|         / \\\n'
-              '|          |    ')
+              '|          |  \n'
+              '|               ')
     if numero_erros == 6:
         print('|        (```)\n'
               '|          |  \n'
@@ -233,7 +245,10 @@ def jogando(nome_jogador):
     # Preenche palavra_oculta com um "underscore" (_) para cada letra da palavra
     # A lista palavra_oculta serve para exibir na tela a palavra de forma "camuflada"
     for i in palavra:
-        palavra_oculta.append('_')
+        if i == '-':
+            palavra_oculta.append('-')  # para o jogador não ter que advinhar hífen
+        else:
+            palavra_oculta.append('_')
 
     # chama função que imprime a tela inicial da rodada
     apresentacao(nome_jogador, dica, palavra_oculta)
